@@ -106,12 +106,17 @@
                 ];
 
                 courses.forEach(course => {
+                    const link = course === "Industrial Electrician" ? 'href="Electrician.html"' : '';
+                    const cardClass = link ? 'class="course-card clickable"' : 'class="course-card"';
+                    const onClick = link ? 'onclick="window.location.href=\'Electrician.html\'" style="cursor: pointer;"' : '';
+                    
                     document.write(`
-                        <div class="course-card">
+                        <div ${cardClass} ${onClick}>
                             <img src="images/gtti_tech_dept_1766310264680.png" alt="${course}" class="course-img">
                             <div class="course-content">
                                 <h3>${course}</h3>
                                 <p>Professional certification and hands-on training.</p>
+                                ${link ? '<a href="Electrician.html" class="btn-view-details">View Details <i class="fas fa-arrow-right"></i></a>' : ''}
                             </div>
                         </div>
                     `);
