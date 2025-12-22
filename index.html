@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTTI Digital Campus Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-university fa-lg"></i>
+                <div>GTTI <span>Digital Campus</span></div>
+            </a>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#lms">LMS</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Mobile Auth Buttons will be cloned here by JS -->
+            </ul>
+
+            <div class="auth-buttons dropdown">
+                <button class="btn btn-primary dropbtn">Login <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Student Login</a>
+                    <a href="#">Teacher Login</a>
+                    <a href="#">Admin Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/gtti_hero_campus_1766310224232.png" alt="GTTI Campus" class="hero-bg">
+        <div class="hero-content">
+            <h1>Welcome to GTTI Digital Campus</h1>
+            <p>Empowering next-generation technical education with advanced digital management. Real-time attendance,
+                online results, and seamless LMS integration.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Student Portal</a>
+                <a href="#" class="btn btn-secondary">Teacher Portal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="section">
+        <h2 class="section-title">Our Departments</h2>
+        <div class="departments-container">
+            <div class="dept-carousel">
+                <!-- 18 Departments -->
+                <!-- Using generic dept icon for all loops -->
+                <script>
+                    const depts = [
+                        "Electrical Technology", "Mechanical Technology", "Information Technology",
+                        "Civil Technology", "Auto & Diesel", "Welding", "Refrigeration & AC",
+                        "Electronics", "Plumbing", "CNC / Machining", "Computer Applications",
+                        "Networking", "Office Management", "Drafting", "Industrial Electronics",
+                        "Mechatronics", "Instrumentation", "Safety & QC"
+                    ];
+
+                    depts.forEach(dept => {
+                        document.write(`
+                            <div class="dept-card">
+                                <img src="images/gtti_tech_dept_1766310264680.png" alt="${dept}" class="dept-img">
+                                <div class="dept-info">
+                                    <h3>${dept}</h3>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Offered Section -->
+    <section id="courses" class="section">
+        <h2 class="section-title">Courses Offered</h2>
+        <div class="courses-grid">
+            <!-- 18 Courses -->
+            <script>
+                const courses = [
+                    "Industrial Electrician", "Full Stack Web Development", "Advanced Welding",
+                    "CNC Operator", "Auto Technician", "Office Automation", "HVAC Professional",
+                    "Applied Electronics", "Civil Surveyor", "Professional Plumbing",
+                    "Network Administrator", "AutoCAD Drafting", "Data Entry Operator",
+                    "Health & Safety (HSE)", "Robotics Basics", "Mobile Repairing",
+                    "Graphic Design", "Computerized Accounting"
+                ];
+
+                courses.forEach(course => {
+                    document.write(`
+                        <div class="course-card">
+                            <img src="images/gtti_tech_dept_1766310264680.png" alt="${course}" class="course-img">
+                            <div class="course-content">
+                                <h3>${course}</h3>
+                                <p>Professional certification and hands-on training.</p>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- LMS Section -->
+    <section id="lms" class="lms-section">
+        <div class="lms-content">
+            <h2>Digital Learning Management System</h2>
+            <p>Access your coursework from anywhere. Our state-of-the-art LMS provides a comprehensive digital learning
+                environment.</p>
+            <ul>
+                <li>Online Video Lectures & Resources</li>
+                <li>Digital Assignment Submission</li>
+                <li>Real-time Progress Tracking</li>
+                <li>Instant Assessment Results</li>
+            </ul>
+            <a href="#" class="btn btn-primary">Access LMS Dashboard</a>
+        </div>
+        <div class="lms-image">
+            <img src="images/gtti_lms_dashboard_1766310243823.png" alt="LMS Dashboard">
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-fingerprint"></i></div>
+                <h3>Digital Attendance</h3>
+                <p>Biometric and digital tracking for accurate attendance records.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-poll"></i></div>
+                <h3>Online Results</h3>
+                <p>Instant access to semester results and academic history.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
+                <h3>Role-Based Access</h3>
+                <p>Dedicated portals for Students, Teachers, and Admin.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Real-Time Monitoring</h3>
+                <p>Live insights into campus activities and performance.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Secure Login</h3>
+                <p>Encrypted data protection for all user accounts.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile Friendly</h3>
+                <p>Fully responsive design for access on any device.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">About The Institute</h2>
+        <div class="about-content">
+            <p>GTTI is a premier government technical institute dedicated to empowering the youth with cutting-edge
+                vocational skills. We are leading the digital transformation in technical education, ensuring our
+                students are ready for the modern industrial landscape. With our new Digital Campus Management System,
+                we are streamlining operations and enhancing the learning experience.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>GTTI Digital Campus</h4>
+                <p>Government Technical Training Institute</p>
+                <p>Empowering Youth, Building Future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#lms">LMS Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Main Campus Road, City</li>
+                    <li><i class="fas fa-phone"></i> +92 123 4567890</li>
+                    <li><i class="fas fa-envelope"></i> info@gtti.edu.pk</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GTTI Digital Campus Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
