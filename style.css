@@ -367,6 +367,11 @@ nav {
     transform: scale(1.02);
 }
 
+.course-card.clickable:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .course-img {
     height: 180px;
     width: 100%;
@@ -382,6 +387,27 @@ nav {
     font-size: 1.2rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
+}
+
+.btn-view-details {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-view-details:hover {
+    background-color: #0a4d29;
+    transform: translateX(5px);
+}
+
+.btn-view-details i {
+    margin-left: 0.5rem;
 }
 
 /* LMS Section */
