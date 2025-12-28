@@ -97,21 +97,36 @@
             <!-- 18 Courses -->
             <script>
                 const courses = [
-                    "Industrial Electrician", "Full Stack Web Development", "Advanced Welding",
-                    "CNC Operator", "Auto Technician", "Office Automation", "HVAC Professional",
-                    "Applied Electronics", "Civil Surveyor", "Professional Plumbing",
-                    "Network Administrator", "AutoCAD Drafting", "Data Entry Operator",
-                    "Health & Safety (HSE)", "Robotics Basics", "Mobile Repairing",
-                    "Graphic Design", "Computerized Accounting"
+                    { name: "Industrial Electrician", icon: "fas fa-bolt", link: "Electrician.html" },
+                    { name: "Full Stack Web Development", icon: "fas fa-code", link: "FullStackWebDevelopment.html" },
+                    { name: "Advanced Welding", icon: "fas fa-fire", link: "AdvancedWelding.html" },
+                    { name: "CNC Operator", icon: "fas fa-cogs", link: "CNCOperator.html" },
+                    { name: "Auto Technician", icon: "fas fa-car", link: "AutoTechnician.html" },
+                    { name: "Office Automation", icon: "fas fa-laptop", link: "OfficeAutomation.html" },
+                    { name: "HVAC Professional", icon: "fas fa-snowflake", link: "HVACProfessional.html" },
+                    { name: "Applied Electronics", icon: "fas fa-microchip", link: "AppliedElectronics.html" },
+                    { name: "Civil Surveyor", icon: "fas fa-ruler-combined", link: "CivilSurveyor.html" },
+                    { name: "Professional Plumbing", icon: "fas fa-wrench", link: "ProfessionalPlumbing.html" },
+                    { name: "Network Administrator", icon: "fas fa-network-wired", link: "NetworkAdministrator.html" },
+                    { name: "AutoCAD Drafting", icon: "fas fa-drafting-compass", link: "AutoCADDrafting.html" },
+                    { name: "Data Entry Operator", icon: "fas fa-keyboard", link: "DataEntryOperator.html" },
+                    { name: "Health & Safety (HSE)", icon: "fas fa-hard-hat", link: "HealthAndSafety.html" },
+                    { name: "Robotics Basics", icon: "fas fa-robot", link: "RoboticsBasics.html" },
+                    { name: "Mobile Repairing", icon: "fas fa-mobile-alt", link: "MobileRepairing.html" },
+                    { name: "Graphic Design", icon: "fas fa-paint-brush", link: "GraphicDesign.html" },
+                    { name: "Computerized Accounting", icon: "fas fa-calculator", link: "ComputerizedAccounting.html" }
                 ];
 
                 courses.forEach(course => {
                     document.write(`
-                        <div class="course-card">
-                            <img src="images/gtti_tech_dept_1766310264680.png" alt="${course}" class="course-img">
+                        <div class="course-card" style="text-align: center; padding: 20px;">
+                            <div class="course-icon" style="font-size: 3rem; color: #0a4d29; margin-bottom: 1rem;">
+                                <i class="${course.icon}"></i>
+                            </div>
                             <div class="course-content">
-                                <h3>${course}</h3>
+                                <h3>${course.name}</h3>
                                 <p>Professional certification and hands-on training.</p>
+                                <a href="${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
                             </div>
                         </div>
                     `);

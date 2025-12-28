@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computerized Accounting - GTTI Digital Campus</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .course-hero {
+            background: linear-gradient(135deg, var(--primary-color), #0a4d29);
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .course-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .course-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+
+        .course-overview {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .course-overview h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .course-overview p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .course-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card-header {
+            background: linear-gradient(135deg, var(--primary-color), #0a4d29);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .course-card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-duration {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .course-shift {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .course-card-body {
+            padding: 2rem;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .course-highlights {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .course-highlights h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .highlight-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-enroll {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-enroll:hover {
+            background: #0a4d29;
+            transform: scale(1.05);
+        }
+
+        .course-admission {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 3rem 0;
+        }
+
+        .course-admission h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .admission-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .admission-step {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .course-hero h1 {
+                font-size: 2rem;
+            }
+
+            .course-options {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="fas fa-university fa-lg"></i>
+                <div>GTTI <span>Digital Campus</span></div>
+            </a>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#departments">Departments</a></li>
+                <li><a href="index.html#courses">Courses</a></li>
+                <li><a href="index.html#lms">LMS</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="auth-buttons dropdown">
+                <button class="btn btn-primary dropbtn">Login <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Student Login</a>
+                    <a href="#">Teacher Login</a>
+                    <a href="#">Admin Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <h1><i class="fas fa-calculator"></i> Computerized Accounting</h1>
+        <p>Master the skills of Computerized Accounting</p>
+    </section>
+
+    <!-- Course Container -->
+    <div class="course-container">
+
+        <!-- Course Overview -->
+        <div class="course-overview">
+            <h2>Course Overview</h2>
+            <p>
+                The Computerized Accounting course at GTTI provides comprehensive training. Students gain hands-on
+                experience and learn
+                industry-standard practices which are vital for a successful career.
+            </p>
+            <p>
+                Our program is designed to prepare students for successful careers in the field, with
+                flexible scheduling options to accommodate different needs and commitments.
+            </p>
+        </div>
+
+        <!-- Course Options -->
+        <h2 style="text-align: center; color: var(--primary-color); margin: 2rem 0;">Available Programs</h2>
+        <div class="course-options">
+
+            <!-- 2 Years Morning Course -->
+            <div class="course-card">
+                <div class="course-card-header">
+                    <h3>Diploma Program</h3>
+                    <div class="course-duration">2 Years</div>
+                    <div class="course-shift"><i class="fas fa-sun"></i> Morning Shift</div>
+                </div>
+                <div class="course-card-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> Comprehensive training</li>
+                        <li><i class="fas fa-check-circle"></i> Theory & practical workshops</li>
+                        <li><i class="fas fa-check-circle"></i> Industrial exposure</li>
+                        <li><i class="fas fa-check-circle"></i> Government certified diploma</li>
+                        <li><i class="fas fa-check-circle"></i> Job placement assistance</li>
+                        <li><i class="fas fa-check-circle"></i> Modern lab facilities</li>
+                    </ul>
+                    <button class="btn-enroll">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- 1 Year Evening Course -->
+            <div class="course-card">
+                <div class="course-card-header">
+                    <h3>Certificate Program</h3>
+                    <div class="course-duration">1 Year</div>
+                    <div class="course-shift"><i class="fas fa-moon"></i> Evening Shift</div>
+                </div>
+                <div class="course-card-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> Essential skills</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible evening schedule</li>
+                        <li><i class="fas fa-check-circle"></i> Hands-on training</li>
+                        <li><i class="fas fa-check-circle"></i> Government certified</li>
+                        <li><i class="fas fa-check-circle"></i> Career advancement support</li>
+                        <li><i class="fas fa-check-circle"></i> Working professionals welcome</li>
+                    </ul>
+                    <button class="btn-enroll">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6 Months CBT&A Evening Course -->
+            <div class="course-card">
+                <div class="course-card-header">
+                    <h3>CBT&A Program</h3>
+                    <div class="course-duration">6 Months</div>
+                    <div class="course-shift"><i class="fas fa-moon"></i> Evening Shift</div>
+                </div>
+                <div class="course-card-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> Competency Based Training</li>
+                        <li><i class="fas fa-check-circle"></i> Fast-track program</li>
+                        <li><i class="fas fa-check-circle"></i> Skill-focused curriculum</li>
+                        <li><i class="fas fa-check-circle"></i> Evening classes</li>
+                        <li><i class="fas fa-check-circle"></i> Industry-relevant skills</li>
+                        <li><i class="fas fa-check-circle"></i> Quick job entry</li>
+                    </ul>
+                    <button class="btn-enroll">
+                        <i class="fas fa-user-plus"></i> Enroll Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Course Highlights -->
+        <div class="course-highlights">
+            <h2>Why Choose Our Course?</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certified Training</h3>
+                    <p>Government recognized certification upon completion</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Modern Equipment</h3>
+                    <p>State-of-the-art tools and equipment</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from experienced industry professionals</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Job Placement</h3>
+                    <p>Career guidance and placement support</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industry Exposure</h3>
+                    <p>Practical training and industrial visits</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Timing</h3>
+                    <p>Morning and evening shifts available</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admission Process -->
+        <div class="course-admission">
+            <h2>Admission Process</h2>
+            <div class="admission-steps">
+                <div class="admission-step">
+                    <div class="step-number">1</div>
+                    <h3>Apply Online</h3>
+                    <p>Fill out the admission form</p>
+                </div>
+                <div class="admission-step">
+                    <div class="step-number">2</div>
+                    <h3>Submit Documents</h3>
+                    <p>Provide required certificates</p>
+                </div>
+                <div class="admission-step">
+                    <div class="step-number">3</div>
+                    <h3>Interview</h3>
+                    <p>Meet with our admission team</p>
+                </div>
+                <div class="admission-step">
+                    <div class="step-number">4</div>
+                    <h3>Enrollment</h3>
+                    <p>Complete fee payment and start learning</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GTTI Digital Campus Management System. All Rights Reserved.</p>
+        <p><i class="fas fa-map-marker-alt"></i> Government Technical Training Institute</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
