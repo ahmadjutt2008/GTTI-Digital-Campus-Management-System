@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - GTTI Digital Campus</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Desktop Top Header -->
+    <div class="desktop-header">
+        <div class="header-logo-text">
+            <span>LOGO</span>
+            <span>GTTI</span>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Left Side (Empty on Desktop) -->
+        <div class="left-empty-space"></div>
+
+        <!-- Right Side (Login Card) -->
+        <div class="login-section">
+            <div class="login-container">
+
+                <!-- Mobile Logo (Hidden on Desktop) -->
+                <div class="mobile-logo-section">
+                    <div class="logo-circle">
+                        <!-- Using generic icon as placeholder for specific circular logo -->
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <!-- 'GTTI' text not explicitly in list for Mobile Top, but often accompanies logo. 
+                         Wireframe 1 'Mobile' says: Top: Circular GTTI logo. Below: Input 1...
+                         It doesn't explicitly say text below logo, but let's stick to just the logo element or include text if it looks bare.
+                         I'll stick to just the logo to be safe, or include GTTI inside/near it. 
+                         Wireframe 1 shows a big circle with 'TTI' inside? It's a bit abstract. 
+                         I will use the FA icon. -->
+                </div>
+
+                <form class="login-form" action="#" method="POST">
+
+                    <div class="input-group">
+                        <input type="text" placeholder="College Roll No." class="input-field" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" class="input-field" required>
+                    </div>
+
+                    <button type="button" class="btn-login"
+                        onclick="alert('Login logic not implemented as per requirements')">LOGIN</button>
+
+                    <div class="form-footer">
+                        <a href="#">Forget Password?</a>
+                        <a href="#">Registration?</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

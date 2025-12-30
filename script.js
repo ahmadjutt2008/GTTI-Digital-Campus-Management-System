@@ -69,4 +69,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (authContainer) authContainer.style.display = 'none';
         }
     }
+
+
+    // Login Dropdown Click Handling (Desktop)
+    const dropBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    if (dropBtn && dropdownContent) {
+        dropBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent immediate closing
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!e.target.matches('.dropbtn') && !e.target.closest('.dropbtn')) {
+                if (dropdownContent.classList.contains('show')) {
+                    dropdownContent.classList.remove('show');
+                }
+            }
+        });
+    }
 });

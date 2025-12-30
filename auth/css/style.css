@@ -1,0 +1,219 @@
+/* GTTI Digital Campus - Authentication Styles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header / Top Bar (Desktop Only) --- */
+.desktop-header {
+    display: none; /* Hidden on mobile */
+}
+
+/* --- Main Container --- */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* --- Logo Section (Mobile) --- */
+.mobile-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo-circle {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.logo-circle i {
+    font-size: 50px;
+    color: #000;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+/* --- Login Form --- */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners as requested */
+    outline: none;
+    color: #333;
+}
+
+.input-field:focus {
+    border-color: #666;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #FFFF00; /* Yellow Button */
+    color: #000;
+    border: 1px solid #000; /* Matches wireframe style usually, or none. Wireframe shows border on inputs, button looks like it might have a thin one or just valid standout */
+    border-radius: 30px; /* Highly rounded based on 'Rounded corners' and wireframe look */
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #e6e600;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive / Desktop Styles --- */
+@media (min-width: 768px) {
+    body {
+        background-color: #fff; /* Keep white */
+    }
+
+    /* Desktop Header */
+    .desktop-header {
+        display: flex;
+        align-items: center;
+        padding: 15px 40px;
+        background-color: #e0e0e0; /* Gray bar at top as per wireframe */
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 60px;
+    }
+
+    .header-logo-text {
+        font-size: 24px;
+        font-weight: 900;
+        color: #000;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .header-logo-text span {
+        font-weight: bold;
+    }
+
+    /* Layout Change */
+    .main-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        padding-top: 60px; /* Space for header */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-empty-space {
+        flex: 1;
+        /* Empty space on left 'clean institutional layout' */
+    }
+
+    .login-section {
+        flex: 1;
+        display: flex;
+        justify-content: center; /* Align card to the right side area but centered within that half */
+        align-items: center;
+        padding-right: 10%; /* Shift slightly right as per wireframe visualization if needed, or just center in right half */
+    }
+
+    .login-container {
+        max-width: 400px;
+        background: #fff;
+        padding: 40px;
+        border-radius: 0; /* Wireframe card looks simple, maybe slight shadow */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow on desktop */
+        align-items: stretch; /* Stretch inputs */
+    }
+
+    .mobile-logo-section {
+        margin-bottom: 30px;
+        /* In desktop wireframe, the logo is in the top bar, but the card usually replicates it or has a title. 
+           Wireframe 2 (Desktop) shows 'Logo GTTI' in gray bar. The card itself has NO logo, just inputs. 
+           Wait, wireframe 1 is mobile (circular logo). Wireframe 2 is Desktop (Top bar). 
+           We will hide the mobile logo section on desktop if the wireframe implies strictly inputs in the card.
+           Let's re-read: "Desktop View... Left side empty... Login card includes: Two inputs, Yellow button, links". 
+           So NO logo in the card on desktop. Logo is in the top header.
+        */
+        display: none; 
+    }
+    
+    .input-field {
+        border-radius: 4px; /* Slightly less rounded on desktop usually? Or consistent. Wireframe shows rects. Let's keep 8px or 4px. Request said "Rounded corners on inputs & buttons". */
+        margin-bottom: 15px;
+    }
+    
+    .btn-login {
+        border-radius: 30px; /* Keep pill shape or rounded rect. Wireframe button is rounded. */
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+}

@@ -119,12 +119,12 @@ nav {
     color: var(--primary-color);
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+/* Remove hover to show, use JS click instead */
+/* .dropdown:hover .dropdown-content { display: block; } */
+/* .dropdown:hover .dropbtn { background-color: #c5a028; } */
 
-.dropdown:hover .dropbtn {
-    background-color: #c5a028;
+.dropdown-content.show {
+    display: block;
 }
 
 .btn {
