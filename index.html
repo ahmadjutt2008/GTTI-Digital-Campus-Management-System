@@ -16,7 +16,7 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <i class="fas fa-university fa-lg"></i>
+                <img src="images/gtti_logo.png" alt="GTTI Logo" class="logo-img" style="border-radius: 45%;">
                 <div>GTTI <span>Digital Campus</span></div>
             </a>
 
@@ -53,8 +53,8 @@
             <p>Empowering next-generation technical education with advanced digital management. Real-time attendance,
                 online results, and seamless LMS integration.</p>
             <div class="hero-btns">
-                <a href="#" class="btn btn-primary">Student Portal</a>
-                <a href="#" class="btn btn-secondary">Teacher Portal</a>
+                <a href="auth/student-login/index.html" class="btn btn-primary">Student Portal</a>
+                <a href="auth/teacher-login/index.html" class="btn btn-secondary">Teacher Portal</a>
             </div>
         </div>
     </section>
@@ -94,34 +94,15 @@
     <section id="courses" class="section">
         <h2 class="section-title">Courses Offered</h2>
         <div class="courses-grid">
-            <!-- 18 Courses -->
+            <!-- Top 3 Courses -->
             <script>
                 const courses = [
                     { name: "Industrial Electrician", icon: "fas fa-bolt", link: "Electrician.html" },
                     { name: "Full Stack Web Development", icon: "fas fa-code", link: "FullStackWebDevelopment.html" },
-                    { name: "Advanced Welding", icon: "fas fa-fire", link: "AdvancedWelding.html" },
-                    { name: "CNC Operator", icon: "fas fa-cogs", link: "CNCOperator.html" },
-                    { name: "Auto Technician", icon: "fas fa-car", link: "AutoTechnician.html" },
-                    { name: "Office Automation", icon: "fas fa-laptop", link: "OfficeAutomation.html" },
-                    { name: "HVAC Professional", icon: "fas fa-snowflake", link: "HVACProfessional.html" },
-                    { name: "Applied Electronics", icon: "fas fa-microchip", link: "AppliedElectronics.html" },
-                    { name: "Civil Surveyor", icon: "fas fa-ruler-combined", link: "CivilSurveyor.html" },
-                    { name: "Professional Plumbing", icon: "fas fa-wrench", link: "ProfessionalPlumbing.html" },
-                    { name: "Network Administrator", icon: "fas fa-network-wired", link: "NetworkAdministrator.html" },
-                    { name: "AutoCAD Drafting", icon: "fas fa-drafting-compass", link: "AutoCADDrafting.html" },
-                    { name: "Data Entry Operator", icon: "fas fa-keyboard", link: "DataEntryOperator.html" },
-                    { name: "Health & Safety (HSE)", icon: "fas fa-hard-hat", link: "HealthAndSafety.html" },
-                    { name: "Robotics Basics", icon: "fas fa-robot", link: "RoboticsBasics.html" },
-                    { name: "Mobile Repairing", icon: "fas fa-mobile-alt", link: "MobileRepairing.html" },
-                    { name: "Graphic Design", icon: "fas fa-paint-brush", link: "GraphicDesign.html" },
-                    { name: "Computerized Accounting", icon: "fas fa-calculator", link: "ComputerizedAccounting.html" }
+                    { name: "Advanced Welding", icon: "fas fa-fire", link: "AdvancedWelding.html" }
                 ];
 
                 courses.forEach(course => {
-                    const link = course === "Industrial Electrician" ? 'href="Electrician.html"' : '';
-                    const cardClass = link ? 'class="course-card clickable"' : 'class="course-card"';
-                    const onClick = link ? 'onclick="window.location.href=\'Electrician.html\'" style="cursor: pointer;"' : '';
-
                     document.write(`
                         <div class="course-card" style="text-align: center; padding: 20px;">
                             <div class="course-icon" style="font-size: 3rem; color: #0a4d29; margin-bottom: 1rem;">
@@ -129,13 +110,17 @@
                             </div>
                             <div class="course-content">
                                 <h3>${course.name}</h3>
-                                <p>Professional certification and hands-on training.</p>
-                                <a href="${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
+                                <p></p>
+                                <a href="courses/${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
                             </div>
                         </div>
                     `);
                 });
             </script>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="courses/index.html" class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;">View
+                More Courses</a>
         </div>
     </section>
 

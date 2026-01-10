@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses - GTTI Digital Campus</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), #0a4d29);
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../images/gtti_logo.png" alt="GTTI Logo" class="logo-img" style="border-radius: 45%;">
+                <div>GTTI <span>Digital Campus</span></div>
+            </a>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#departments">Departments</a></li>
+                <li><a href="#" class="active">Courses</a></li>
+                <li><a href="../index.html#lms">LMS</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <!-- Mobile Auth Buttons will be cloned here by JS -->
+            </ul>
+
+            <div class="auth-buttons dropdown">
+                <button class="btn btn-primary dropbtn">Login <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="../auth/student-login/index.html">Student Login</a>
+                    <a href="../auth/teacher-login/index.html">Teacher Login</a>
+                    <a href="../auth/admin-login/index.html">Admin Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>All Courses</h1>
+        <p>Explore our wide range of technical and vocational programs designed for your career growth.</p>
+    </section>
+
+    <!-- Courses Grid -->
+    <section id="courses" class="section">
+        <div class="courses-grid">
+            <script>
+                const courses = [
+                    { name: "Industrial Electrician", icon: "fas fa-bolt", link: "Electrician.html" },
+                    { name: "Full Stack Web Development", icon: "fas fa-code", link: "FullStackWebDevelopment.html" },
+                    { name: "Advanced Welding", icon: "fas fa-fire", link: "AdvancedWelding.html" },
+                    { name: "CNC Operator", icon: "fas fa-cogs", link: "CNCOperator.html" },
+                    { name: "Auto Technician", icon: "fas fa-car", link: "AutoTechnician.html" },
+                    { name: "Office Automation", icon: "fas fa-laptop", link: "OfficeAutomation.html" },
+                    { name: "HVAC Professional", icon: "fas fa-snowflake", link: "HVACProfessional.html" },
+                    { name: "Applied Electronics", icon: "fas fa-microchip", link: "AppliedElectronics.html" },
+                    { name: "Civil Surveyor", icon: "fas fa-ruler-combined", link: "CivilSurveyor.html" },
+                    { name: "Professional Plumbing", icon: "fas fa-wrench", link: "ProfessionalPlumbing.html" },
+                    { name: "Network Administrator", icon: "fas fa-network-wired", link: "NetworkAdministrator.html" },
+                    { name: "AutoCAD Drafting", icon: "fas fa-drafting-compass", link: "AutoCADDrafting.html" },
+                    { name: "Data Entry Operator", icon: "fas fa-keyboard", link: "DataEntryOperator.html" },
+                    { name: "Health & Safety (HSE)", icon: "fas fa-hard-hat", link: "HealthAndSafety.html" },
+                    { name: "Robotics Basics", icon: "fas fa-robot", link: "RoboticsBasics.html" },
+                    { name: "Mobile Repairing", icon: "fas fa-mobile-alt", link: "MobileRepairing.html" },
+                    { name: "Graphic Design", icon: "fas fa-paint-brush", link: "GraphicDesign.html" },
+                    { name: "Computerized Accounting", icon: "fas fa-calculator", link: "ComputerizedAccounting.html" }
+                ];
+
+                courses.forEach(course => {
+                    document.write(`
+                        <div class="course-card" style="text-align: center; padding: 20px;">
+                            <div class="course-icon" style="font-size: 3rem; color: #0a4d29; margin-bottom: 1rem;">
+                                <i class="${course.icon}"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3>${course.name}</h3>
+                                <p></p>
+                                <a href="${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>GTTI Digital Campus</h4>
+                <p>Government Technical Training Institute</p>
+                <p>Empowering Youth, Building Future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#departments">Departments</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="../index.html#lms">LMS Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Main Campus Road, City</li>
+                    <li><i class="fas fa-phone"></i> +92 123 4567890</li>
+                    <li><i class="fas fa-envelope"></i> info@gtti.edu.pk</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GTTI Digital Campus Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

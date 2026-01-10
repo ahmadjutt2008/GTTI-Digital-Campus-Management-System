@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - GTTI Digital Campus</title>
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Dashboard Specific Styles -->
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <img src="images/gtti_logo.png" alt="GTTI Logo" style="border-radius: 45%;">
+                    <span>GTTI Student</span>
+                </a>
+                <button id="sidebar-close" class="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#personal-info" class="nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Personal Info</span>
+                </a>
+                <a href="#attendance" class="nav-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="#results" class="nav-item">
+                    <i class="fas fa-poll"></i>
+                    <span>Results</span>
+                </a>
+                <a href="#lectures" class="nav-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Weekly Lectures</span>
+                </a>
+                <a href="#syllabus" class="nav-item">
+                    <i class="fas fa-book"></i>
+                    <span>Syllabus</span>
+                </a>
+                <a href="#academic-progress" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Academic Progress</span>
+                </a>
+                <a href="#assignments" class="nav-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Assignments</span>
+                </a>
+                <a href="#notifications" class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+                <a href="#lms" class="nav-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>LMS Access</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="menu-toggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="page-title" id="page-title">Dashboard</h2>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Ali Khan</span>
+                        <span class="user-role">Student (DAE - Electrical)</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <span>AK</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-logout" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Area -->
+            <div class="content-wrapper">
+
+                <!-- SECTION: Overview (Default) -->
+                <section id="overview" class="dashboard-section active">
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>85%</h3>
+                                <p>Attendance</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>6</h3>
+                                <p>Subjects</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>2</h3>
+                                <p>Pending Assignments</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>3.5</h3>
+                                <p>Last GPA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Notifications</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jan 05, 2026</td>
+                                        <td>Mid-term Exam Schedule Announced</td>
+                                        <td><span class="status absent">Exam</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 03, 2026</td>
+                                        <td>Holiday Notification (Kashmir Day)</td>
+                                        <td><span class="status present">General</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 01, 2026</td>
+                                        <td>Welcome to Spring Semester 2026</td>
+                                        <td><span class="status submitted">Academic</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- SECTION: Personal Info -->
+                <section id="personal-info" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>My Profile</h3>
+                        </div>
+                        <div class="profile-details"
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Full Name</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Ali Khan</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Roll Number</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">DAE-2024-056</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Department</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Electrical Technology</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Semester</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">4th Semester</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Registration
+                                    No.</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">REG-889922</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Contact</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">0300-1234567</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Email</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">ali.khan@student.gtti.edu.pk</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Attendance -->
+                <section id="attendance" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Subject-wise Attendance</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Total Classes</th>
+                                        <th>Attended</th>
+                                        <th>Percentage</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Electrical Machines</td>
+                                        <td>24</td>
+                                        <td>22</td>
+                                        <td>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div class="progress-bar-container">
+                                                    <div class="progress-bar" style="width: 91%"></div>
+                                                </div>
+                                                91%
+                                            </div>
+                                        </td>
+                                        <td><span class="status present">Safe</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Power Systems</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div class="progress-bar-container">
+                                                    <div class="progress-bar"
+                                                        style="width: 75%; background-color: #ffc107;"></div>
+                                                </div>
+                                                75%
+                                            </div>
+                                        </td>
+                                        <td><span class="status pending">Warning</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Digital Electronics</td>
+                                        <td>24</td>
+                                        <td>12</td>
+                                        <td>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div class="progress-bar-container">
+                                                    <div class="progress-bar"
+                                                        style="width: 50%; background-color: #dc3545;"></div>
+                                                </div>
+                                                50%
+                                            </div>
+                                        </td>
+                                        <td><span class="status absent">Critical</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Results -->
+                <section id="results" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Latest Semester Results</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Total Marks</th>
+                                        <th>Obtained</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Applied Physics</td>
+                                        <td>100</td>
+                                        <td>85</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Calculus</td>
+                                        <td>100</td>
+                                        <td>78</td>
+                                        <td>B+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Circuit Analysis</td>
+                                        <td>100</td>
+                                        <td>92</td>
+                                        <td>A+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="btn"
+                                style="background-color: var(--primary-color); color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+                                <i class="fas fa-download"></i> Download Transcript
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Lectures -->
+                <section id="lectures" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Weekly Timetable</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>09:00 - 10:00</th>
+                                        <th>10:00 - 11:00</th>
+                                        <th>11:00 - 12:00</th>
+                                        <th>12:00 - 01:00</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>Electrical Machines</td>
+                                        <td>Physics Lab</td>
+                                        <td>Physics Lab</td>
+                                        <td>Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>Math</td>
+                                        <td>Circuit Analysis</td>
+                                        <td>English</td>
+                                        <td>Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>Programming</td>
+                                        <td>Programming</td>
+                                        <td>Library</td>
+                                        <td>Break</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Syllabus -->
+                <section id="syllabus" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Course Syllabus</h3>
+                        </div>
+                        <p>View or download the syllabus for your current semester.</p>
+                        <ul style="list-style: none; margin-top: 1rem;">
+                            <li
+                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                <span><i class="fas fa-file-pdf" style="color: #dc3545; margin-right: 10px;"></i>
+                                    Electrical Machines Syllabus</span>
+                                <a href="#" style="color: var(--primary-color);">Download</a>
+                            </li>
+                            <li
+                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+                                <span><i class="fas fa-file-pdf" style="color: #dc3545; margin-right: 10px;"></i>
+                                    Advanced Math Syllabus</span>
+                                <a href="#" style="color: var(--primary-color);">Download</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION: Academic Progress -->
+                <section id="academic-progress" class="dashboard-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>65%</h3>
+                                <p>Degree Completion</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>3.8</h3>
+                                <p>CGPA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Semester Performance</h3>
+                        </div>
+                        <div style="padding: 1rem 0;">
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <strong>Semester 1</strong>
+                                    <span>3.2 GPA</span>
+                                </div>
+                                <div class="progress-bar-container" style="width: 100%; height: 20px;">
+                                    <div class="progress-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <strong>Semester 2</strong>
+                                    <span>3.5 GPA</span>
+                                </div>
+                                <div class="progress-bar-container" style="width: 100%; height: 20px;">
+                                    <div class="progress-bar" style="width: 87%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <strong>Semester 3</strong>
+                                    <span>3.5 GPA</span>
+                                </div>
+                                <div class="progress-bar-container" style="width: 100%; height: 20px;">
+                                    <div class="progress-bar" style="width: 87%;"></div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 0px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                    <strong>Semester 4 (Current)</strong>
+                                    <span>In Progress</span>
+                                </div>
+                                <div class="progress-bar-container"
+                                    style="width: 100%; height: 20px; background-color: #eee;">
+                                    <div class="progress-bar"
+                                        style="width: 40%; background-color: var(--accent-color);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Assignments -->
+                <section id="assignments" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Pending Assignments</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Subject</th>
+                                        <th>Due Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Circuit Design Project</td>
+                                        <td>Circuit Analysis</td>
+                                        <td>Jan 10, 2026</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                        <td><button style="padding: 5px 10px; cursor: pointer;">Upload</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lab Report #4</td>
+                                        <td>Physics</td>
+                                        <td>Jan 12, 2026</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                        <td><button style="padding: 5px 10px; cursor: pointer;">Upload</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Notifications -->
+                <section id="notifications" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>All Notifications</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jan 05, 2026</td>
+                                        <td>Mid-term Exam Schedule Announced. Check notice board for details.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 03, 2026</td>
+                                        <td>Holiday Notification (Kashmir Day)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 01, 2026</td>
+                                        <td>Fee submission deadline extended till Jan 15th.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: LMS -->
+                <section id="lms" class="dashboard-section">
+                    <div class="card" style="text-align: center; padding: 3rem;">
+                        <i class="fas fa-laptop-code"
+                            style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h2 style="margin-bottom: 1rem; color: var(--text-color);">Learning Management System</h2>
+                        <p
+                            style="margin-bottom: 2rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            Access video lectures, submit digital assignments, and take online quizzes through our
+                            integrated LMS portal.
+                        </p>
+                        <button class="btn"
+                            style="background-color: var(--primary-color); color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; transition: 0.3s;">
+                            <i class="fas fa-external-link-alt"></i> Launch LMS Portal
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Dashboard Scripts -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

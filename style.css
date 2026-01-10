@@ -54,6 +54,11 @@ nav {
     color: var(--accent-color);
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
 .nav-links {
     display: flex;
     gap: 20px;

@@ -12,13 +12,37 @@
 
 <body>
 
-    <!-- Desktop Top Header -->
-    <div class="desktop-header">
-        <div class="header-logo-text">
-            <span>LOGO</span>
-            <span>GTTI</span>
-        </div>
-    </div>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">
+                <img src="../../images/gtti_logo.png" alt="GTTI Logo" class="logo-img" style="border-radius: 45%;">
+                <div>GTTI <span>Digital Campus</span></div>
+            </a>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#departments">Departments</a></li>
+                <li><a href="../../courses/index.html">Courses</a></li>
+                <li><a href="../../index.html#lms">LMS</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="auth-buttons dropdown">
+                <button class="btn btn-primary dropbtn">Login <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="index.html">Student Login</a>
+                    <a href="../teacher-login/index.html">Teacher Login</a>
+                    <a href="../admin-login/index.html">Admin Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Main Content Wrapper -->
     <div class="main-wrapper">
@@ -34,7 +58,7 @@
                 <div class="mobile-logo-section">
                     <div class="logo-circle">
                         <!-- Using generic icon as placeholder for specific circular logo -->
-                        <i class="fas fa-university"></i>
+                        <img src="../../images/gtti_logo.png" alt="GTTI Logo">
                     </div>
                     <!-- 'GTTI' text not explicitly in list for Mobile Top, but often accompanies logo. 
                          Wireframe 1 'Mobile' says: Top: Circular GTTI logo. Below: Input 1...
@@ -55,7 +79,7 @@
                     </div>
 
                     <button type="button" class="btn-login"
-                        onclick="alert('Login logic not implemented as per requirements')">LOGIN</button>
+                        onclick="window.location.href='../../student-dashboard.html'">LOGIN</button>
 
                     <div class="form-footer">
                         <a href="#">Forget Password?</a>
