@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - GTTI Digital Campus</title>
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Dashboard Specific Styles -->
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <img src="images/gtti_logo.png" alt="GTTI Logo" style="border-radius: 45%;">
+                    <span>GTTI Teacher</span>
+                </a>
+                <button id="sidebar-close" class="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#profile" class="nav-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="#attendance" class="nav-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Manage Attendance</span>
+                </a>
+                <a href="#grading" class="nav-item">
+                    <i class="fas fa-marker"></i>
+                    <span>Grading & Results</span>
+                </a>
+                <a href="#schedule" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Class Schedule</span>
+                </a>
+                <a href="#assignments" class="nav-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Assignments</span>
+                </a>
+                <a href="#lms-upload" class="nav-item">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>LMS Management</span>
+                </a>
+                <a href="#notifications" class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="menu-toggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="page-title" id="page-title">Dashboard</h2>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Mr. Ahmed Raza</span>
+                        <span class="user-role">Senior Instructor (Electrical)</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar" style="background-color: var(--primary-color);">
+                            <span>AR</span>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn-logout" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Area -->
+            <div class="content-wrapper">
+
+                <!-- SECTION: Overview (Default) -->
+                <section id="overview" class="dashboard-section active">
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>4</h3>
+                                <p>Assigned Classes</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>120</h3>
+                                <p>Total Students</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>15</h3>
+                                <p>Pending Assessments</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Today</h3>
+                                <p>2 Lectures</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Upcoming Schedule (Today)</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Class</th>
+                                        <th>Subject</th>
+                                        <th>Room</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>09:00 - 10:00</td>
+                                        <td>DAE Electrical (2nd Sem)</td>
+                                        <td>Electrical Machines</td>
+                                        <td>Room 101</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00 - 12:00</td>
+                                        <td>DAE Electronics (1st Sem)</td>
+                                        <td>Basic Electronics</td>
+                                        <td>Lab 3</td>
+                                        <td><span class="status pending">Upcoming</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- SECTION: Profile -->
+                <section id="profile" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Instructor Profile</h3>
+                        </div>
+                        <div class="profile-details"
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Full Name</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Ahmed Raza</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Employee ID</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">EMP-2019-445</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Designation</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Senior Instructor</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Department</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Electrical Technology</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Join Date</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">Sep 01, 2019</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Contact</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">0321-7654321</span>
+                            </div>
+                            <div>
+                                <strong style="display: block; color: #666; font-size: 0.9rem;">Email</strong>
+                                <span style="font-size: 1.1rem; font-weight: 500;">ahmed.raza@staff.gtti.edu.pk</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Manage Attendance -->
+                <section id="attendance" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Mark Attendance</h3>
+                        </div>
+                        <div style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                            <select style="padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                                <option>Select Class</option>
+                                <option>DAE Electrical (2nd Sem)</option>
+                                <option>DAE Electronics (1st Sem)</option>
+                            </select>
+                            <select style="padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                                <option>Select Subject</option>
+                                <option>Electrical Machines</option>
+                                <option>Basic Electronics</option>
+                            </select>
+                            <input type="date" style="padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                            <button class="btn"
+                                style="background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Load
+                                Student List</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No</th>
+                                        <th>Student Name</th>
+                                        <th>Status</th>
+                                        <th>Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>El-056</td>
+                                        <td>Ali Khan</td>
+                                        <td>
+                                            <select style="padding: 5px; border-radius: 4px;">
+                                                <option>Present</option>
+                                                <option>Absent</option>
+                                                <option>Leave</option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text" placeholder="Optional"
+                                                style="padding: 5px; width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>El-057</td>
+                                        <td>Bilal Ahmed</td>
+                                        <td>
+                                            <select style="padding: 5px; border-radius: 4px;">
+                                                <option>Present</option>
+                                                <option>Absent</option>
+                                                <option>Leave</option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text" placeholder="Optional"
+                                                style="padding: 5px; width: 100%;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>El-058</td>
+                                        <td>Chaudhry Nisar</td>
+                                        <td>
+                                            <select style="padding: 5px; border-radius: 4px;">
+                                                <option>Present</option>
+                                                <option selected>Absent</option>
+                                                <option>Leave</option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text" placeholder="Medical" style="padding: 5px; width: 100%;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="btn"
+                                style="background: var(--accent-color); color: var(--primary-color); font-weight: bold; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer;">Submit
+                                Attendance</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Grading -->
+                <section id="grading" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Upload Marks / Results</h3>
+                        </div>
+                        <div style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                            <select style="padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                                <option>Select Exam</option>
+                                <option>Mid Term Spring 2026</option>
+                                <option>Final Term 2025</option>
+                                <option>Quiz 1</option>
+                            </select>
+                            <select style="padding: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                                <option>Select Class</option>
+                                <option>DAE Electrical (2nd Sem)</option>
+                            </select>
+                            <button class="btn"
+                                style="background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Initialize
+                                Sheet</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No</th>
+                                        <th>Name</th>
+                                        <th>Total Marks</th>
+                                        <th>Obtained Marks</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>El-056</td>
+                                        <td>Ali Khan</td>
+                                        <td>50</td>
+                                        <td><input type="number" value="42" style="width: 60px; padding: 5px;"></td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>El-057</td>
+                                        <td>Bilal Ahmed</td>
+                                        <td>50</td>
+                                        <td><input type="number" value="35" style="width: 60px; padding: 5px;"></td>
+                                        <td>B</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="btn"
+                                style="background: var(--primary-color); color: white; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer;">Save
+                                Draft</button>
+                            <button class="btn"
+                                style="background: var(--accent-color); color: var(--primary-color); border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; font-weight: bold;">Lock
+                                & Publish</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Schedule -->
+                <section id="schedule" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>My Weekly Schedule</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>09:00 - 10:00</th>
+                                        <th>10:00 - 11:00</th>
+                                        <th>11:00 - 12:00</th>
+                                        <th>12:00 - 01:00</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>Electrical Machines (Lab)</td>
+                                        <td>Electrical Machines (Lab)</td>
+                                        <td>Free</td>
+                                        <td>Meeting</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>Free</td>
+                                        <td>Office Hour</td>
+                                        <td>Power Systems</td>
+                                        <td>Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>Basic Electronics</td>
+                                        <td>Basic Electronics</td>
+                                        <td>Free</td>
+                                        <td>Power Systems</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Assignments -->
+                <section id="assignments" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header"
+                            style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>Course Assignments</h3>
+                            <button class="btn"
+                                style="background: var(--primary-color); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+                                <i class="fas fa-plus"></i> Create New
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Class</th>
+                                        <th>Due Date</th>
+                                        <th>Submissions</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Circuit Design Project</td>
+                                        <td>DAE Electrical</td>
+                                        <td>Jan 10, 2026</td>
+                                        <td>45/50</td>
+                                        <td><span class="status pending">Open</span></td>
+                                        <td><button style="cursor: pointer; padding: 5px;">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lab Report #4</td>
+                                        <td>DAE Electronics</td>
+                                        <td>Jan 12, 2026</td>
+                                        <td>12/55</td>
+                                        <td><span class="status pending">Open</span></td>
+                                        <td><button style="cursor: pointer; padding: 5px;">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: LMS Management -->
+                <section id="lms-upload" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>LMS Content Management</h3>
+                        </div>
+                        <div
+                            style="padding: 2rem; border: 2px dashed #ccc; border-radius: 8px; text-align: center; background-color: #fafafa;">
+                            <i class="fas fa-cloud-upload-alt"
+                                style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                            <h4>Drag and Drop lecture notes, videos, or slides here</h4>
+                            <p style="margin: 1rem 0; color: #666;">or</p>
+                            <button class="btn"
+                                style="background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Browse
+                                Files</button>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <h4>Recent Uploads</h4>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li
+                                    style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                                    <span><i class="fas fa-file-pdf" style="color: #dc3545; margin-right: 10px;"></i>
+                                        Lecture_05_Motors.pdf</span>
+                                    <span>Uploaded on Jan 5</span>
+                                </li>
+                                <li
+                                    style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                                    <span><i class="fas fa-file-powerpoint"
+                                            style="color: #fd7e14; margin-right: 10px;"></i> Week_2_Slides.pptx</span>
+                                    <span>Uploaded on Jan 1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Notifications -->
+                <section id="notifications" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>System Notices</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Message</th>
+                                        <th>Priority</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jan 04, 2026</td>
+                                        <td>Faculty Meeting on Friday at 3:00 PM in Conf Room.</td>
+                                        <td><span class="status absent">High</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 01, 2026</td>
+                                        <td>Marks submission portal is now open for Spring Semester.</td>
+                                        <td><span class="status present">Normal</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Dashboard Scripts (Reusing generic dashboard script) -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

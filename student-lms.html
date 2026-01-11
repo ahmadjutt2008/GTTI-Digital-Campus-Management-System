@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student LMS - GTTI Digital Campus</title>
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Dashboard Specific Styles -->
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* LMS Specific Styles */
+        .course-card-lms {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .course-card-lms:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-thumbnail {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .course-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .course-thumbnail:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .course-details {
+            padding: 1.5rem;
+        }
+
+        .video-list {
+            list-style: none;
+        }
+
+        .video-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .video-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .video-preview {
+            width: 120px;
+            height: 80px;
+            background-color: #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .video-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .video-meta {
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="student-dashboard.html" class="sidebar-brand">
+                    <img src="images/gtti_logo.png" alt="GTTI Logo" style="border-radius: 45%;">
+                    <span>GTTI LMS</span>
+                </a>
+                <button id="sidebar-close" class="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div style="padding: 20px 20px 0;">
+                <a href="student-dashboard.html"
+                    style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">
+                    <i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#my-courses" class="nav-item active">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>My Courses</span>
+                </a>
+                <a href="#recent" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Recent Activity</span>
+                </a>
+                <a href="#assignments" class="nav-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Assignments</span>
+                </a>
+                <a href="#quizzes" class="nav-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Quizzes</span>
+                </a>
+                <a href="#resources" class="nav-item">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Resources</span>
+                </a>
+                <a href="#discussion" class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Discussion</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="menu-toggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 class="page-title" id="page-title">My Courses</h2>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Ali Khan</span>
+                        <span class="user-role">Student</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <span>AK</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content-wrapper">
+
+                <!-- SECTION: My Courses -->
+                <section id="my-courses" class="dashboard-section active">
+
+                    <!-- Continue Learning Hero -->
+                    <div class="card"
+                        style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--primary-color), #0d4625); color: white;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; padding: 1rem;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <span
+                                    style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.85rem;">Continue
+                                    Watching</span>
+                                <h2 style="margin: 10px 0; font-size: 1.8rem; color: white;">Electrical Machines: DC
+                                    Motors Principles</h2>
+                                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Module 4 - Lecture 2 • 15 mins remaining
+                                </p>
+                                <button class="btn"
+                                    style="background: var(--accent-color); color: var(--primary-color); border: none; padding: 10px 25px; border-radius: 30px; font-weight: bold; cursor: pointer;">
+                                    <i class="fas fa-play" style="margin-right: 5px;"></i> Resume
+                                </button>
+                            </div>
+                            <div
+                                style="flex: 0 0 250px; height: 150px; background: rgba(0,0,0,0.2); border-radius: 8px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-play-circle" style="font-size: 3rem; opacity: 0.8;"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Enrolled Courses</h3>
+                    <div class="courses-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+
+                        <!-- Course 1 -->
+                        <div class="course-card-lms">
+                            <div class="course-thumbnail">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play-circle" style="color: white; font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                            <div class="course-details">
+                                <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Electrical Machines</h4>
+                                <div class="progress-bar-container" style="height: 6px; margin-bottom: 10px;">
+                                    <div class="progress-bar" style="width: 75%;"></div>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                                    <span>75% Complete</span>
+                                    <span>12/16 Modules</span>
+                                </div>
+                                <button class="btn"
+                                    style="width: 100%; padding: 8px; border: 1px solid var(--primary-color); color: var(--primary-color); background: transparent; border-radius: 4px; cursor: pointer; transition: 0.3s; font-weight: 500;">
+                                    Go to Class
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="course-card-lms">
+                            <div class="course-thumbnail">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play-circle" style="color: white; font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                            <div class="course-details">
+                                <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Applied Physics</h4>
+                                <div class="progress-bar-container" style="height: 6px; margin-bottom: 10px;">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                                    <span>45% Complete</span>
+                                    <span>8/18 Modules</span>
+                                </div>
+                                <button class="btn"
+                                    style="width: 100%; padding: 8px; border: 1px solid var(--primary-color); color: var(--primary-color); background: transparent; border-radius: 4px; cursor: pointer; transition: 0.3s; font-weight: 500;">
+                                    Go to Class
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="course-card-lms">
+                            <div class="course-thumbnail">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play-circle" style="color: white; font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                            <div class="course-details">
+                                <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Computer Programming</h4>
+                                <div class="progress-bar-container" style="height: 6px; margin-bottom: 10px;">
+                                    <div class="progress-bar"
+                                        style="width: 20%; background-color: var(--accent-color);"></div>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                                    <span>20% Complete</span>
+                                    <span>3/15 Modules</span>
+                                </div>
+                                <button class="btn"
+                                    style="width: 100%; padding: 8px; border: 1px solid var(--primary-color); color: var(--primary-color); background: transparent; border-radius: 4px; cursor: pointer; transition: 0.3s; font-weight: 500;">
+                                    Go to Class
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION: Recent Activity -->
+                <section id="recent" class="dashboard-section">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Recent Video Lectures</h3>
+                    <div class="video-list">
+
+                        <div class="video-item">
+                            <div class="video-preview">
+                                <i class="fas fa-play"
+                                    style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color: #fff;"></i>
+                            </div>
+                            <div class="video-info">
+                                <h4>Introduction to Magnetic Circuits</h4>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-book"></i> Electrical Machines</span>
+                                    <span><i class="fas fa-clock"></i> 45 mins</span>
+                                    <span><i class="fas fa-check-circle" style="color: green;"></i> Watched</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-item">
+                            <div class="video-preview">
+                                <i class="fas fa-play"
+                                    style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color: #fff;"></i>
+                            </div>
+                            <div class="video-info">
+                                <h4>Kirchhoff's Laws Explained</h4>
+                                <div class="video-meta">
+                                    <span><i class="fas fa-book"></i> Circuit Analysis</span>
+                                    <span><i class="fas fa-clock"></i> 30 mins</span>
+                                    <span><i class="fas fa-spinner"></i> In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION: Assignments -->
+                <section id="assignments" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>LMS Assignments</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Assignment</th>
+                                        <th>Course</th>
+                                        <th>Due Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Week 4 Problem Set</td>
+                                        <td>Electrical Machines</td>
+                                        <td>Jan 15, 2026</td>
+                                        <td><span class="status pending">Todo</span></td>
+                                        <td><button class="btn"
+                                                style="padding: 5px 10px; font-size: 0.8rem; cursor: pointer;">Start</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Programming Lab 2</td>
+                                        <td>Computer Programming</td>
+                                        <td>Jan 12, 2026</td>
+                                        <td><span class="status submitted">Submitted</span></td>
+                                        <td><button class="btn"
+                                                style="padding: 5px 10px; font-size: 0.8rem; cursor: pointer;">View</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: Resources -->
+                <section id="resources" class="dashboard-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Course Resources</h3>
+                        </div>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div style="text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                                <i class="fas fa-file-pdf"
+                                    style="font-size: 3rem; color: #dc3545; margin-bottom: 10px;"></i>
+                                <h4 style="margin-bottom: 5px;">Lecture Notes</h4>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">PDFs for all weeks</p>
+                                <a href="#" style="color: var(--primary-color);">Browse</a>
+                            </div>
+                            <div style="text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                                <i class="fas fa-book"
+                                    style="font-size: 3rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+                                <h4 style="margin-bottom: 5px;">E-Books</h4>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Reference Books</p>
+                                <a href="#" style="color: var(--primary-color);">Browse</a>
+                            </div>
+                            <div style="text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                                <i class="fas fa-flask"
+                                    style="font-size: 3rem; color: #fd7e14; margin-bottom: 10px;"></i>
+                                <h4 style="margin-bottom: 5px;">Lab Manuals</h4>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Practical guides</p>
+                                <a href="#" style="color: var(--primary-color);">Browse</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
