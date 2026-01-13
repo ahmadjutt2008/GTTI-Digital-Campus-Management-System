@@ -4,76 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - GTTI Digital Campus</title>
+    <title>Admin Login | GTTI Digital Futura</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <nav>
-            <a href="../../index.html" class="logo">
-                <img src="../../images/gtti_logo.png" alt="GTTI Logo" class="logo-img" style="border-radius: 45%;">
-                <div>GTTI <span>Digital Campus</span></div>
-            </a>
+    <div class="login-wrapper">
+        <!-- Visual Effects Layer -->
 
-            <!-- <button class="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
+        <!-- Left Side: Futuristic Banner -->
+        <div class="login-banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <div class="tagline">GTTI DIGITAL CAMPUS</div>
+                <h1>Empowering Skills Through <span>Digital Innovation</span></h1>
+                <p>Welcome to the next generation of industrial training. Your future begins here.</p>
+            </div>
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../index.html#departments">Departments</a></li>
-                <li><a href="../../courses/index.html">Courses</a></li>
-                <li><a href="../../index.html#lms">LMS</a></li>
-                <li><a href="../../index.html#about">About</a></li>
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-
-            <div class="auth-buttons dropdown">
-                <button class="btn btn-primary dropbtn">Login <i class="fas fa-chevron-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="../student-login/index.html">Student Login</a>
-                    <a href="../teacher-login/index.html">Teacher Login</a>
-                    <a href="index.html">Admin Login</a>
-                </div>
-            </div> -->
-        </nav>
-    </header>
-
-    <div class="main-wrapper">
-        <div class="left-empty-space"></div>
-
+        <!-- Right Side: Clean Futuristic Login Section -->
         <div class="login-section">
-            <div class="login-container">
-
-                <div class="mobile-logo-section">
-                    <div class="logo-circle">
-                        <i class="fas fa-user-shield"></i>
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl5sMNEYJEIKE37xjGQf1gZrRcJn-NpkIgzQ&s"
+                            alt="GTTI Logo" style="border-radius: 50%; height: 70px;">
                     </div>
+                    <h2>SYSTEM ACCESS</h2>
+                    <p>IDENTIFICATION REQUIRED</p>
                 </div>
 
-                <form class="login-form" action="#" method="POST">
-
+                <form class="login-form">
                     <div class="input-group">
-                        <input type="text" placeholder="Employee ID" class="input-field" required>
+                        <label>Admin ID</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card-alt"></i>
+                            <input type="text" placeholder="ACCESS ID" required autocomplete="off">
+                        </div>
                     </div>
 
                     <div class="input-group">
-                        <input type="password" placeholder="Password" class="input-field" required>
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-fingerprint"></i>
+                            <input type="password" placeholder="ENCRYPTED KEY" required>
+                        </div>
                     </div>
 
-                    <button type="button" class="btn-login"
-                        onclick="window.location.href='../../admin-dashboard.html'">LOGIN</button>
+                    <button type="button" class="btn-login" onclick="window.location.href='../../admin-dashboard.html'">
+                        LOGIN
+                    </button>
 
-                    <div class="form-footer">
+                    <div class="form-footer" style="justify-content: center;">
                         <a href="#">Forget Password?</a>
-                        <a href="#">Registration?</a>
                     </div>
-
                 </form>
             </div>
         </div>

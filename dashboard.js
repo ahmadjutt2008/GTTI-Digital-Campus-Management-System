@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
+            const href = item.getAttribute('href');
+            if (href && !href.startsWith('#')) return;
+
             e.preventDefault();
 
             // Remove active class from all items

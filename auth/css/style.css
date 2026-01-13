@@ -1,367 +1,321 @@
-/* GTTI Digital Campus - Authentication Styles */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+/* GTTI Digital Campus - Split Futuristic Student Login (Bright Theme) */
 
 :root {
     --primary-color: #116D3B;
-    /* Government Green */
-    --secondary-color: #F4F7F6;
-    --accent-color: #D4AF37;
+    --primary-light: #1a8a4d;
+    --primary-glow: #00ff88;
+    --primary-bg: #f8faf9;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border-glow: rgba(17, 109, 59, 0.2);
     --text-color: #333333;
+    --text-muted: #666666;
     --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--white);
+    background-color: var(--primary-bg);
     color: var(--text-color);
-    line-height: 1.6;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 }
 
-/* --- Header / Navigation --- */
-header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+.login-wrapper {
+    display: flex;
     width: 100%;
+    height: 100vh;
+    position: relative;
+    background:
+        linear-gradient(rgba(17, 109, 59, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 109, 59, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
-nav {
+/* --- Left Banner --- */
+.login-banner {
+    flex: 0 0 65%;
+    position: relative;
+    background: url('../../images/student_login_vibe_bg_v2.png') no-repeat center center/cover;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(17, 109, 59, 0.85), rgba(5, 22, 13, 0.7));
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 10%;
+    animation: fadeInLeft 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     color: var(--white);
-    text-decoration: none;
 }
 
-.logo span {
-    color: var(--accent-color);
+.tagline {
+    color: var(--primary-glow);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
-.logo-img {
-    height: 50px;
+.banner-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content h1 span {
+    color: var(--primary-glow);
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* --- Right Login Section --- */
+.login-section {
+    flex: 0 0 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: var(--primary-bg);
+    position: relative;
+    z-index: 2;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem 2.5rem;
+    /* Reduced padding slightly */
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(17, 109, 59, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    animation: cardEntry 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+    margin: 15px auto 1.5rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(17, 109, 59, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.login-logo img {
+    height: 40px;
     width: auto;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--accent-color);
+.login-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
+    white-space: nowrap;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: var(--white);
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 1001;
-    overflow: hidden;
-    margin-top: 5px;
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
 }
 
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: 500;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Responsive Nav */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: #116D3B;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 2rem;
-        transition: 0.4s;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .auth-buttons {
-        display: none;
-    }
-}
-
-
-/* --- Main Container --- */
-.login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-/* --- Logo Section (Mobile) --- */
-.mobile-logo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.logo-circle {
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.logo-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* .logo-img and .logo-text removed as they conflicted with new header styles */
-
-/* --- Login Form --- */
 .login-form {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 .input-group {
-    width: 100%;
+    text-align: left;
 }
 
-.input-field {
+.input-group label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 1.2rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.input-wrapper input {
     width: 100%;
-    padding: 12px 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    /* Rounded corners as requested */
+    padding: 0.9rem 1rem 0.9rem 3.2rem;
+    background: #ffffff;
+    border: 1.5px solid #e1e8e4;
+    border-radius: 12px;
+    color: var(--text-color);
+    font-size: 0.95rem;
     outline: none;
-    color: #333;
+    transition: var(--transition);
 }
 
-.input-field:focus {
-    border-color: #666;
+.input-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(17, 109, 59, 0.1);
+}
+
+.input-wrapper input:focus+i {
+    opacity: 1;
 }
 
 .btn-login {
     width: 100%;
-    padding: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    background-color: #FFFF00;
-    /* Yellow Button */
-    color: #000;
-    border: 1px solid #000;
-    /* Matches wireframe style usually, or none. Wireframe shows border on inputs, button looks like it might have a thin one or just valid standout */
-    border-radius: 30px;
-    /* Highly rounded based on 'Rounded corners' and wireframe look */
-    cursor: pointer;
+    padding: 1.1rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    margin-top: 10px;
-    transition: background-color 0.2s;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
 }
 
 .btn-login:hover {
-    background-color: #e6e600;
+    background: var(--primary-light);
+    box-shadow: 0 10px 25px rgba(17, 109, 59, 0.2);
+    transform: translateY(-2px);
 }
 
 .form-footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-top: 15px;
+    justify-content: space-between;
+    margin-top: 0.5rem;
 }
 
 .form-footer a {
+    color: var(--text-muted);
     text-decoration: none;
-    color: #000;
-    font-size: 14px;
+    font-size: 0.85rem;
+    transition: var(--transition);
     font-weight: 500;
 }
 
 .form-footer a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }
 
-/* --- Responsive / Desktop Styles --- */
-@media (min-width: 768px) {
-    body {
-        background-color: #fff;
-        /* Keep white */
+/* --- Animations --- */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
 
-    /* Desktop Header styles removed as they are now global */
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-    .header-logo-text {
-        font-size: 24px;
-        font-weight: 900;
-        color: #000;
-        display: none;
-        /* Hide old text logo element if present */
+@keyframes cardEntry {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
     }
 
-    /* Layout Change */
-    .main-wrapper {
-        display: flex;
-        width: 100%;
-        height: 100vh;
-        padding-top: 60px;
-        /* Space for header */
-        align-items: center;
-        justify-content: center;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
+}
 
-    .left-empty-space {
-        flex: 1;
-        /* Empty space on left 'clean institutional layout' */
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+    .banner-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .login-banner {
+        flex: 0 0 50%;
     }
 
     .login-section {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        /* Align card to the right side area but centered within that half */
-        align-items: center;
-        padding-right: 10%;
-        /* Shift slightly right as per wireframe visualization if needed, or just center in right half */
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
     }
 
-    .login-container {
-        max-width: 400px;
-        background: #fff;
-        padding: 40px;
-        border-radius: 0;
-        /* Wireframe card looks simple, maybe slight shadow */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        /* Subtle shadow on desktop */
-        align-items: stretch;
-        /* Stretch inputs */
+    .login-wrapper {
+        flex-direction: column;
+        height: auto;
     }
 
-    .mobile-logo-section {
-        margin-bottom: 30px;
-        /* In desktop wireframe, the logo is in the top bar, but the card usually replicates it or has a title. 
-           Wireframe 2 (Desktop) shows 'Logo GTTI' in gray bar. The card itself has NO logo, just inputs. 
-           Wait, wireframe 1 is mobile (circular logo). Wireframe 2 is Desktop (Top bar). 
-           We will hide the mobile logo section on desktop if the wireframe implies strictly inputs in the card.
-           Let's re-read: "Desktop View... Left side empty... Login card includes: Two inputs, Yellow button, links". 
-           So NO logo in the card on desktop. Logo is in the top header.
-        */
+    .login-banner {
         display: none;
     }
 
-    .input-field {
-        border-radius: 4px;
-        /* Slightly less rounded on desktop usually? Or consistent. Wireframe shows rects. Let's keep 8px or 4px. Request said "Rounded corners on inputs & buttons". */
-        margin-bottom: 15px;
+    .login-section {
+        flex: 0 0 100%;
+        min-height: 100vh;
+        padding: 0 1rem 2rem;
     }
 
-    .btn-login {
-        border-radius: 30px;
-        /* Keep pill shape or rounded rect. Wireframe button is rounded. */
-        margin-top: 5px;
-        font-size: 20px;
+    .login-card {
+        box-shadow: none;
+        border: none;
+        padding: 2rem 1.5rem;
+        background: transparent;
+        backdrop-filter: none;
     }
-
 }

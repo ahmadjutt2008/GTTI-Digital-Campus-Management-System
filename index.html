@@ -28,7 +28,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#departments">Departments</a></li>
                 <li><a href="#courses">Courses</a></li>
-                <li><a href="#lms">LMS</a></li>
+
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <!-- Mobile Auth Buttons will be cloned here by JS -->
@@ -59,6 +59,21 @@
         </div>
     </section>
 
+    <!-- Our Moto Section -->
+    <section class="moto-section">
+        <div class="moto-container">
+            <div class="moto-card">
+                <div class="moto-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="moto-text">
+                    <h2>Our Moto</h2>
+                    <p>Skilling People, Spreading Lights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Departments Section -->
     <section id="departments" class="section">
         <h2 class="section-title">Our Departments</h2>
@@ -68,17 +83,18 @@
                 <!-- Using generic dept icon for all loops -->
                 <script>
                     const depts = [
-                        "Electrical Technology", "Mechanical Technology", "Information Technology",
-                        "Civil Technology", "Auto & Diesel", "Welding", "Refrigeration & AC",
-                        "Electronics", "Plumbing", "CNC / Machining",
-                        "Drafting", "Industrial Electronics",
-                        "Mechatronics", "Instrumentation", "Safety & QC"
+                        "Electrical Technology",
+                        "Mechanical Technology",
+                        "Information Technology",
+                        "Civil Technology",
+                        "Welding",
+                        "Electronics",
+                        "Drafting",
                     ];
 
                     depts.forEach(dept => {
                         document.write(`
                             <div class="dept-card">
-                                <img src="images/gtti_tech_dept_1766310264680.png" alt="${dept}" class="dept-img">
                                 <div class="dept-info">
                                     <h3>${dept}</h3>
                                 </div>
@@ -119,29 +135,12 @@
             </script>
         </div>
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="courses/index.html" class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;">View
+            <a href="courses/index.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.95rem;">View
                 More Courses</a>
         </div>
     </section>
 
-    <!-- LMS Section -->
-    <section id="lms" class="lms-section">
-        <div class="lms-content">
-            <h2>Digital Learning Management System</h2>
-            <p>Access your coursework from anywhere. Our state-of-the-art LMS provides a comprehensive digital learning
-                environment.</p>
-            <ul>
-                <li>Online Video Lectures & Resources</li>
-                <li>Digital Assignment Submission</li>
-                <li>Real-time Progress Tracking</li>
-                <li>Instant Assessment Results</li>
-            </ul>
-            <a href="student-lms.html" class="btn btn-primary">Access LMS Dashboard</a>
-        </div>
-        <div class="lms-image">
-            <img src="images/gtti_lms_dashboard_1766310243823.png" alt="LMS Dashboard">
-        </div>
-    </section>
+
 
     <!-- Key Features -->
     <section class="section">
@@ -205,7 +204,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#departments">Departments</a></li>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="#lms">LMS Login</a></li>
+
                 </ul>
             </div>
             <div class="footer-col">
@@ -218,7 +217,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 GTTI Digital Campus Management System. All Rights Reserved.</p>
+            <p>&copy; 2026 GTTI Digital Campus Management System | All Rights Reserved.</p>
         </div>
     </footer>
 
