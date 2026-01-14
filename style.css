@@ -380,103 +380,217 @@ nav {
     background-color: var(--accent-color);
 }
 
-.departments-container {
-    padding: 0 2rem;
-}
-
-/* Simple customized scrollbar for horizontal scroll if carousel JS fails or as fallback */
-.dept-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 20px;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) #e0e0e0;
-}
-
-.dept-carousel::-webkit-scrollbar {
-    height: 8px;
-}
-
-.dept-carousel::-webkit-scrollbar-track {
-    background: #e0e0e0;
-}
-
-.dept-carousel::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 4px;
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
 }
 
 .dept-card {
-    min-width: 250px;
     background: var(--white);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    text-align: center;
-    transition: var(--transition);
-    border-top: 5px solid var(--primary-color);
-    flex-shrink: 0;
+    border-radius: 16px;
+    padding: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 120px;
+    gap: 1.5rem;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+    z-index: 0;
 }
 
 .dept-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(17, 109, 59, 0.1);
+    background-color: #f9fdfb;
+}
+
+.dept-card:hover::before {
+    width: 8px;
+}
+
+.dept-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(17, 109, 59, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.dept-card:hover .dept-icon-wrapper {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: rotateY(180deg);
 }
 
 .dept-info {
-    padding: 2rem 1.5rem;
+    z-index: 1;
 }
 
 .dept-info h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.view-programs {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    background: rgba(17, 109, 59, 0.05);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.dept-card:hover .view-programs {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.view-programs i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.dept-card:hover .view-programs i {
+    transform: translateX(3px);
 }
 
 /* Courses Grid */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 30px;
 }
 
 .course-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+    z-index: 0;
 }
 
 .course-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(17, 109, 59, 0.12);
+    background-color: #f9fdfb;
 }
 
-.course-card.clickable:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.course-img {
-    height: 180px;
+.course-card:hover::before {
     width: 100%;
-    object-fit: cover;
-    background-color: #ccc;
 }
 
-.course-content {
-    padding: 1.5rem;
+.course-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: rgba(17, 109, 59, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+    z-index: 1;
 }
 
-.course-content h3 {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+.course-card:hover .course-icon-wrapper {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.course-body {
+    z-index: 1;
+    width: 100%;
+}
+
+.course-body h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover .btn-details {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 10px 30px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-details i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .btn-details i {
+    transform: translateX(5px);
 }
 
 .btn-view-details {
@@ -645,6 +759,116 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
+}
+
+/* Staff Cards */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .staff-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.staff-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.staff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.staff-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(17, 109, 59, 0.1);
+}
+
+.staff-card:hover::before {
+    width: 8px;
+    background-color: var(--accent-color);
+}
+
+.staff-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: rgba(17, 109, 59, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.staff-card:hover .staff-img {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.staff-info {
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.staff-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.staff-post {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.staff-contact {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.staff-contact div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.staff-contact i {
+    color: var(--primary-color);
+    width: 14px;
+    font-size: 0.85rem;
 }
 
 /* Responsive */

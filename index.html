@@ -25,7 +25,7 @@
             </button>
 
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#departments">Departments</a></li>
                 <li><a href="#courses">Courses</a></li>
 
@@ -76,27 +76,30 @@
 
     <!-- Departments Section -->
     <section id="departments" class="section">
-        <h2 class="section-title">Our Departments</h2>
+        <h2 class="section-title">Academic Departments</h2>
         <div class="departments-container">
-            <div class="dept-carousel">
+            <div class="departments-grid">
                 <!-- 18 Departments -->
-                <!-- Using generic dept icon for all loops -->
                 <script>
                     const depts = [
-                        "Electrical Technology",
-                        "Mechanical Technology",
-                        "Information Technology",
-                        "Civil Technology",
-                        "Welding",
-                        "Electronics",
-                        "Drafting",
+                        { name: "Electrical Technology", icon: "fas fa-plug", slug: "ElectricalTechnology" },
+                        { name: "Mechanical Technology", icon: "fas fa-gear", slug: "MechanicalTechnology" },
+                        { name: "Information Technology", icon: "fas fa-laptop-code", slug: "InformationTechnology" },
+                        { name: "Civil Technology", icon: "fas fa-building", slug: "CivilTechnology" },
+                        { name: "Welding", icon: "fas fa-fire-burner", slug: "Welding" },
+                        { name: "Electronics", icon: "fas fa-microchip", slug: "Electronics" },
+                        { name: "Drafting", icon: "fas fa-pen-ruler", slug: "Drafting" },
                     ];
 
                     depts.forEach(dept => {
                         document.write(`
                             <div class="dept-card">
+                                <div class="dept-icon-wrapper">
+                                    <i class="${dept.icon}"></i>
+                                </div>
                                 <div class="dept-info">
-                                    <h3>${dept}</h3>
+                                    <h3>${dept.name}</h3>
+                                    <a href="departments/${dept.slug}.html" class="view-programs">View Detail <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         `);
@@ -120,17 +123,16 @@
 
                 courses.forEach(course => {
                     document.write(`
-                        <div class="course-card" style="text-align: center; padding: 20px;">
-                            <div class="course-icon" style="font-size: 3rem; color: #0a4d29; margin-bottom: 1rem;">
-                                <i class="${course.icon}"></i>
+                            <div class="course-card">
+                                <div class="course-icon-wrapper">
+                                    <i class="${course.icon}"></i>
+                                </div>
+                                <div class="course-body">
+                                    <h3>${course.name}</h3>
+                                    <a href="courses/${course.link}" class="btn-details">View Details <i class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
-                            <div class="course-content">
-                                <h3>${course.name}</h3>
-                                <p></p>
-                                <a href="courses/${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
-                            </div>
-                        </div>
-                    `);
+                        `);
                 });
             </script>
         </div>

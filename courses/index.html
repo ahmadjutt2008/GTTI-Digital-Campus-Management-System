@@ -96,14 +96,13 @@
 
                 courses.forEach(course => {
                     document.write(`
-                        <div class="course-card" style="text-align: center; padding: 20px;">
-                            <div class="course-icon" style="font-size: 3rem; color: #0a4d29; margin-bottom: 1rem;">
+                        <div class="course-card">
+                            <div class="course-icon-wrapper">
                                 <i class="${course.icon}"></i>
                             </div>
-                            <div class="course-content">
+                            <div class="course-body">
                                 <h3>${course.name}</h3>
-                                <p></p>
-                                <a href="${course.link}" class="btn" style="margin-top: 10px; display: inline-block; background-color: #0a4d29; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none;">View Details</a>
+                                <a href="${course.link}" class="btn-details">View Details <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
                     `);
