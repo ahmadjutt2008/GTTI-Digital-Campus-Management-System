@@ -114,28 +114,7 @@
         <h2 class="section-title">Courses Offered</h2>
         <div class="courses-grid">
             <!-- Top 3 Courses -->
-            <script>
-                const courses = [
-                    { name: "Electrician", icon: "fas fa-bolt", link: "Electrician.html" },
-                    { name: "Web Designing and Development", icon: "fas fa-laptop-code", link: "Web Designing and Development.html" },
-                    { name: "Advanced Welding", icon: "fas fa-fire-burner", link: "AdvancedWelding.html" }
-                ];
-                
-
-                courses.forEach(course => {
-                    document.write(`
-                            <div class="course-card">
-                                <div class="course-icon-wrapper">
-                                    <i class="${course.icon}"></i>
-                                </div>
-                                <div class="course-body">
-                                    <h3>${course.name}</h3>
-                                    <a href="courses/${course.link}" class="btn-details">View Details <i class="fas fa-chevron-right"></i></a>
-                                </div>
-                            </div>
-                        `);
-                });
-            </script>
+            <!-- Courses will be loaded dynamically by script.js -->
         </div>
         <div style="text-align: center; margin-top: 2rem;">
             <a href="courses/index.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.95rem;">View
